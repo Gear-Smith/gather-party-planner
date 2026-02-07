@@ -48,6 +48,26 @@ Create a production build:
 npm run build
 ```
 
+## Testing
+
+Run the test suite:
+
+```bash
+bun run test
+```
+
+Run tests in watch mode:
+
+```bash
+bun run test:watch
+```
+
+Run tests with coverage output:
+
+```bash
+bun run test:coverage
+```
+
 ## Deployment
 
 Deployment is done using the Wrangler CLI.

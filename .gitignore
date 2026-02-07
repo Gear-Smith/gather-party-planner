@@ -6,6 +6,7 @@
 # React Router
 /.react-router/
 /build/
+/coverage/
 
 # Cloudflare
 .mf
@@ -16,3 +17,5 @@ worker-configuration.d.ts
 
 !.dev.vars.example
 !.env.example
+
+/skills
