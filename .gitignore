@@ -19,3 +19,4 @@ worker-configuration.d.ts
 !.env.example
 
 /skills
+/dist
