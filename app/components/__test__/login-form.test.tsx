@@ -4,24 +4,21 @@ import { describe, expect, it } from "vitest";
 import { LoginForm } from "../login-form";
 
 describe("LoginForm", () => {
-  it("renders expected fields and actions", () => {
+  it("renders prototype access guidance instead of password auth controls", () => {
     render(<LoginForm />);
 
     expect(
-      screen.getByRole("heading", { name: "Login to your account" }),
+      screen.getByRole("heading", { name: "Prototype access" }),
     ).toBeInTheDocument();
-
-    const emailInput = screen.getByLabelText("Email");
-    const passwordInput = screen.getByLabelText("Password");
-
-    expect(emailInput).toHaveAttribute("type", "email");
-    expect(emailInput).toBeRequired();
-    expect(passwordInput).toHaveAttribute("type", "password");
-    expect(passwordInput).toBeRequired();
-
-    expect(screen.getByRole("button", { name: "Login" })).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: "Login with Google" }),
+      screen.getByText(/does not use passwords or self-service signup/i),
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(/approved users authenticate through the prototype access gateway/i),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Return to home" })).toBeInTheDocument();
+    expect(screen.queryByLabelText("Email")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Password")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Sign up/i)).not.toBeInTheDocument();
   });
 });

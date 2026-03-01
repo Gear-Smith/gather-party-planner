@@ -5,7 +5,16 @@ import { WelcomePage } from "../page";
 
 describe("Welcome navigation choices", () => {
   it("shows actionable Open Party and New Party controls", () => {
-    render(<WelcomePage message="test message" />);
+    render(
+      <WelcomePage
+        message="test message"
+        currentUser={{
+          displayName: "Ray H.",
+          identityEmail: "gearsmith.integrations@gmail.com",
+          partyRole: "co_planner",
+        }}
+      />,
+    );
 
     const openPartyControl =
       screen.queryByRole("button", { name: "Edit a Party" }) ??

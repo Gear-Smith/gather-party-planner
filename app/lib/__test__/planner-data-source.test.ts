@@ -12,6 +12,7 @@ describe("planner data source foundation", () => {
       "users",
       "parties",
       "itinerary",
+      "partyMemberships",
     ]);
   });
 
@@ -22,6 +23,7 @@ describe("planner data source foundation", () => {
     await expect(dataSource.readTable("users")).resolves.toHaveLength(6);
     await expect(dataSource.readTable("parties")).resolves.toHaveLength(1);
     await expect(dataSource.readTable("itinerary")).resolves.toHaveLength(53);
+    await expect(dataSource.readTable("partyMemberships")).resolves.toHaveLength(6);
   });
 
   it("returns defensive copies so consumers cannot mutate shared fixture state", async () => {

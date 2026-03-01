@@ -12,20 +12,93 @@ describe("home route", () => {
     ]);
   });
 
-  it("returns cloudflare env message from loader context", () => {
-    const result = loader({
+  it("redirects to login when no approved identity is present", async () => {
+    try {
+      await loader({
+        request: new Request("https://example.com/"),
+        context: {
+          cloudflare: {
+            env: {
+              VALUE_FROM_CLOUDFLARE: "x",
+              CF_ACCESS_AUD: "",
+              CF_ACCESS_TEAM_DOMAIN: "",
+              DEV_ACCESS_EMAIL: "",
+            },
+          },
+        },
+      } as never);
+      throw new Error("Expected loader to redirect.");
+    } catch (error) {
+      const response = error as Response;
+      expect(response.status).toBe(302);
+      expect(response.headers.get("Location")).toBe("/login");
+    }
+  });
+
+  it("redirects to unauthorized when the approved identity is not assigned in app data", async () => {
+    try {
+      await loader({
+        request: new Request("https://example.com/"),
+        context: {
+          cloudflare: {
+            env: {
+              VALUE_FROM_CLOUDFLARE: "x",
+              CF_ACCESS_AUD: "",
+              CF_ACCESS_TEAM_DOMAIN: "",
+              DEV_ACCESS_EMAIL: "missing@example.com",
+            },
+          },
+        },
+      } as never);
+      throw new Error("Expected loader to redirect.");
+    } catch (error) {
+      const response = error as Response;
+      expect(response.status).toBe(302);
+      expect(response.headers.get("Location")).toBe("/unauthorized");
+    }
+  });
+
+  it("returns authenticated user context for Ray in local development mode", async () => {
+    const result = await loader({
+      request: new Request("https://example.com/"),
       context: {
         cloudflare: {
-          env: { VALUE_FROM_CLOUDFLARE: "x" },
+          env: {
+            VALUE_FROM_CLOUDFLARE: "x",
+            CF_ACCESS_AUD: "",
+            CF_ACCESS_TEAM_DOMAIN: "",
+            DEV_ACCESS_EMAIL: "gearsmith.integrations@gmail.com",
+          },
         },
       },
     } as never);
 
-    expect(result).toEqual({ message: "x" });
+    expect(result).toEqual({
+      message: "x",
+      currentUser: {
+        displayName: "Ray H.",
+        identityEmail: "gearsmith.integrations@gmail.com",
+        partyRole: "co_planner",
+      },
+    });
   });
 
-  it("renders home navigation choices for opening and creating a party", () => {
-    render(createElement(Home, { loaderData: { message: "x" } } as never));
+  it("renders authenticated home navigation choices and user context", () => {
+    render(
+      createElement(
+        Home,
+        {
+          loaderData: {
+            message: "x",
+            currentUser: {
+              displayName: "Ray H.",
+              identityEmail: "gearsmith.integrations@gmail.com",
+              partyRole: "co_planner",
+            },
+          },
+        } as never,
+      ),
+    );
 
     const openPartyControl =
       screen.queryByRole("button", { name: "Edit a Party" }) ??
@@ -38,5 +111,7 @@ describe("home route", () => {
     expect(newPartyControl).toBeInTheDocument();
     expect(openPartyControl).toBeEnabled();
     expect(newPartyControl).toBeEnabled();
+    expect(screen.getByText(/Signed in as Ray H\./)).toBeInTheDocument();
+    expect(screen.getByText(/Co-Planner/)).toBeInTheDocument();
   });
 });

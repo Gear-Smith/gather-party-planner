@@ -1,4 +1,8 @@
 import {
+  createAccountAccessService,
+  type AccountAccessService,
+} from "./account-access-service";
+import {
   createFixturePlannerDataSource,
   type PlannerDataSource,
 } from "./planner-data-source";
@@ -8,6 +12,7 @@ export interface PlannerServices {
   // Route and component code should depend on story-level service methods added
   // to this module over time, not on direct table reads.
   data: PlannerDataSource;
+  accountAccess: AccountAccessService;
 }
 
 export interface CreatePlannerServicesOptions {
@@ -21,8 +26,11 @@ const defaultPlannerServices = createPlannerServices({
 export function createPlannerServices(
   options: CreatePlannerServicesOptions = {},
 ): PlannerServices {
+  const dataSource = options.dataSource ?? createFixturePlannerDataSource();
+
   return {
-    data: options.dataSource ?? createFixturePlannerDataSource(),
+    data: dataSource,
+    accountAccess: createAccountAccessService({ dataSource }),
   };
 }
 

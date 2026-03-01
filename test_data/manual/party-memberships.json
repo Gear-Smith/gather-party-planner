@@ -1,0 +1,32 @@
+[
+  {
+    "party_id": "10000000001",
+    "user_id": "1000000001",
+    "party_role": "planner"
+  },
+  {
+    "party_id": "10000000001",
+    "user_id": "1000000002",
+    "party_role": "party_goer"
+  },
+  {
+    "party_id": "10000000001",
+    "user_id": "1000000003",
+    "party_role": "party_goer"
+  },
+  {
+    "party_id": "10000000001",
+    "user_id": "1000000004",
+    "party_role": "party_goer"
+  },
+  {
+    "party_id": "10000000001",
+    "user_id": "1000000005",
+    "party_role": "party_goer"
+  },
+  {
+    "party_id": "10000000001",
+    "user_id": "1000000006",
+    "party_role": "co_planner"
+  }
+]

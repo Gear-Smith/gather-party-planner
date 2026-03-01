@@ -36,6 +36,7 @@ describe("planner data service foundation", () => {
         },
       ],
       itinerary: [],
+      partyMemberships: [],
     };
     const customSource = createFixturePlannerDataSource(customSnapshot);
     const readTableSpy = vi.spyOn(customSource, "readTable");

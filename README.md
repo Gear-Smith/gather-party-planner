@@ -1,16 +1,6 @@
-# Welcome to React Router!
+# Gather Party Planner
 
-A modern, production-ready template for building full-stack React applications using React Router.
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+Prototype party-planning application built with React Router and deployed to Cloudflare.
 
 ## Getting Started
 
@@ -53,19 +43,19 @@ npm run build
 Run the test suite:
 
 ```bash
-bun run test
+npm test
 ```
 
 Run tests in watch mode:
 
 ```bash
-bun run test:watch
+npm run test:watch
 ```
 
 Run tests with coverage output:
 
 ```bash
-bun run test:coverage
+npm run test:coverage
 ```
 
 ## Data Service Foundation
@@ -94,6 +84,30 @@ Boundary rules:
 - future database migration should happen by replacing the injected data source,
   not by rewriting route/component call sites.
 
+## Prototype Access
+
+This prototype does not implement product-owned passwords, signup, or custom OTP
+delivery. Staging access is expected to be handled by Cloudflare Access, while
+the app maps the verified identity to fixture-backed user and party membership
+records.
+
+- Configure Cloudflare Access for the staging hostname with One-Time PIN by
+  email.
+- Restrict the Access policy to approved tester email addresses.
+- Add these Worker vars in [`wrangler.jsonc`](wrangler.jsonc):
+  - `CF_ACCESS_TEAM_DOMAIN`
+  - `CF_ACCESS_AUD`
+  - `DEV_ACCESS_EMAIL`
+- `DEV_ACCESS_EMAIL` is for local development and tests only. Do not rely on it
+  in staging or production.
+- App authorization is resolved from the service layer using fixture-backed user
+  and party membership data, not from Cloudflare roles.
+
+The current prototype membership fixture lives in
+[`test_data/manual/party-memberships.json`](test_data/manual/party-memberships.json).
+This keeps party roles app-owned until the workbook model or database schema
+catches up.
+
 ## Deployment
 
 Deployment is done using the Wrangler CLI.
@@ -118,8 +132,4 @@ npx wrangler versions deploy
 
 ## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
+Tailwind CSS is configured for the application UI.

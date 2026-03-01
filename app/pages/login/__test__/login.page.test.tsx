@@ -7,10 +7,13 @@ describe("LoginPage", () => {
   it("renders the login form content", () => {
     render(<LoginPage />)
 
+    expect(screen.getByRole("heading", { name: "Prototype access" })).toBeInTheDocument()
     expect(
-      screen.getByRole("heading", { name: "Login to your account" }),
+      screen.getByText(
+        "This prototype is limited to approved testers and does not use passwords or self-service signup.",
+      ),
     ).toBeInTheDocument()
-    expect(screen.getByLabelText("Email")).toBeInTheDocument()
-    expect(screen.getByLabelText("Password")).toBeInTheDocument()
+    expect(screen.queryByLabelText("Email")).not.toBeInTheDocument()
+    expect(screen.queryByLabelText("Password")).not.toBeInTheDocument()
   })
 })

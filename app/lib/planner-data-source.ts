@@ -2,12 +2,14 @@ import itineraryFixtures from "../../test_data/json/itinerary.json";
 import locationsFixtures from "../../test_data/json/locations.json";
 import partiesFixtures from "../../test_data/json/parties.json";
 import usersFixtures from "../../test_data/json/users.json";
+import partyMembershipFixtures from "../../test_data/manual/party-memberships.json";
 import type {
   ItineraryRecord,
   LocationRecord,
   PartyRecord,
   UserRecord,
 } from "../../test_data/json/test-data.types";
+import type { PartyMembershipRecord } from "./account-access-service";
 
 // Infrastructure-only data access. App-facing code should depend on
 // planner-data-service.ts rather than importing this module directly.
@@ -16,6 +18,7 @@ export const PLANNER_TABLE_NAMES = [
   "users",
   "parties",
   "itinerary",
+  "partyMemberships",
 ] as const;
 
 export type PlannerTableName = (typeof PLANNER_TABLE_NAMES)[number];
@@ -25,6 +28,7 @@ export interface PlannerTableRecordMap {
   users: UserRecord;
   parties: PartyRecord;
   itinerary: ItineraryRecord;
+  partyMemberships: PartyMembershipRecord;
 }
 
 export type PlannerDataSnapshot = {
@@ -42,6 +46,7 @@ const fixtureSnapshot: PlannerDataSnapshot = {
   users: usersFixtures as UserRecord[],
   parties: partiesFixtures as PartyRecord[],
   itinerary: itineraryFixtures as ItineraryRecord[],
+  partyMemberships: partyMembershipFixtures as PartyMembershipRecord[],
 };
 
 export function createFixturePlannerDataSource(
