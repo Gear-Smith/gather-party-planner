@@ -1,0 +1,21 @@
+[
+  {
+    "party_id": "10000000001",
+    "party_creator": "1000000001",
+    "party_created_at": "2026-02-22T06:18:00Z",
+    "party_updated_at": "2026-02-22T06:18:00Z",
+    "party_name": "Evan's Graduation Party",
+    "party_type": "Celebration",
+    "party_status": "Pre-Party",
+    "party_start": "2026-05-09T10:00:00Z",
+    "party_end": "2026-05-09T23:00:00Z",
+    "party_location": "Austin TX",
+    "party_headcount": 6,
+    "party_tone": 2,
+    "party_exposure": 3,
+    "party_morality": 3,
+    "party_budget": 3,
+    "party_planner": "Evan A.",
+    "party_share_code": "123456789ABC"
+  }
+]

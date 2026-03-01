@@ -1,0 +1,479 @@
+[
+  {
+    "itin_id": "20000000001",
+    "party_id": "10000000001",
+    "itin_title": "Early Arrival Window (2 pax)",
+    "itin_start": "2026-05-07T09:30:00Z",
+    "itin_end": "2026-05-07T10:30:00Z",
+    "itin_location": "Austin-Bergstrom International Airport (AUS)",
+    "itin_roster": "(Arriving) Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000002",
+    "party_id": "10000000001",
+    "itin_title": "Transport: AUS → Hotel (Early Team)",
+    "itin_start": "2026-05-07T10:30:00Z",
+    "itin_end": "2026-05-07T11:00:00Z",
+    "itin_location": "Rideshare (AUS to Downtown)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000003",
+    "party_id": "10000000001",
+    "itin_title": "Arrival + Bag Drop / Early Check-In Attempt",
+    "itin_start": "2026-05-07T11:00:00Z",
+    "itin_end": "2026-05-07T11:30:00Z",
+    "itin_location": "The Driskill (604 Brazos St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000004",
+    "party_id": "10000000001",
+    "itin_title": "Breakfast (Early Team)",
+    "itin_start": "2026-05-07T11:30:00Z",
+    "itin_end": "2026-05-07T12:15:00Z",
+    "itin_location": "Jo’s Coffee (1300 S Congress Ave, Austin, TX 78704)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000005",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Jo’s → Downtown Supplies Run",
+    "itin_start": "2026-05-07T12:15:00Z",
+    "itin_end": "2026-05-07T12:35:00Z",
+    "itin_location": "Rideshare (SoCo to Downtown)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000006",
+    "party_id": "10000000001",
+    "itin_title": "Gift Bags + Supplies Pickup (pre-bought)",
+    "itin_start": "2026-05-07T12:35:00Z",
+    "itin_end": "2026-05-07T13:15:00Z",
+    "itin_location": "Whole Foods Market Downtown (525 N Lamar Blvd, Austin, TX 78703)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000007",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Supplies → Hotel",
+    "itin_start": "2026-05-07T13:15:00Z",
+    "itin_end": "2026-05-07T13:30:00Z",
+    "itin_location": "Rideshare (Downtown)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000008",
+    "party_id": "10000000001",
+    "itin_title": "Gift Bag Assembly + Room Staging",
+    "itin_start": "2026-05-07T13:30:00Z",
+    "itin_end": "2026-05-07T14:30:00Z",
+    "itin_location": "The Driskill (604 Brazos St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000009",
+    "party_id": "10000000001",
+    "itin_title": "Lunch (Early Team)",
+    "itin_start": "2026-05-07T14:30:00Z",
+    "itin_end": "2026-05-07T15:30:00Z",
+    "itin_location": "Easy Tiger (709 E 6th St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H."
+  },
+  {
+    "itin_id": "20000000010",
+    "party_id": "10000000001",
+    "itin_title": "Main Arrival Window (Remaining 4 pax)",
+    "itin_start": "2026-05-07T15:00:00Z",
+    "itin_end": "2026-05-07T16:00:00Z",
+    "itin_location": "Austin-Bergstrom International Airport (AUS)",
+    "itin_roster": "(Arriving) Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000011",
+    "party_id": "10000000001",
+    "itin_title": "Transport: AUS → Hotel (Main Group)",
+    "itin_start": "2026-05-07T16:00:00Z",
+    "itin_end": "2026-05-07T16:30:00Z",
+    "itin_location": "Rideshare (AUS to Downtown)",
+    "itin_roster": "Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000012",
+    "party_id": "10000000001",
+    "itin_title": "Arrival + Check-In + Gift Bag Hand-Off",
+    "itin_start": "2026-05-07T16:30:00Z",
+    "itin_end": "2026-05-07T17:15:00Z",
+    "itin_location": "The Driskill (604 Brazos St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000013",
+    "party_id": "10000000001",
+    "itin_title": "Event #1: South Congress Walk + Photos Stop",
+    "itin_start": "2026-05-07T17:15:00Z",
+    "itin_end": "2026-05-07T18:30:00Z",
+    "itin_location": "South Congress Ave / Hotel San José (1316 S Congress Ave, Austin, TX 78704)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000014",
+    "party_id": "10000000001",
+    "itin_title": "Transport: SoCo → Dinner",
+    "itin_start": "2026-05-07T18:30:00Z",
+    "itin_end": "2026-05-07T18:50:00Z",
+    "itin_location": "Rideshare (SoCo to S Lamar)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000015",
+    "party_id": "10000000001",
+    "itin_title": "Dinner (Welcome Night)",
+    "itin_start": "2026-05-07T19:00:00Z",
+    "itin_end": "2026-05-07T20:30:00Z",
+    "itin_location": "Loro (2115 S Lamar Blvd, Austin, TX 78704)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000016",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Dinner → Live Music",
+    "itin_start": "2026-05-07T20:30:00Z",
+    "itin_end": "2026-05-07T20:50:00Z",
+    "itin_location": "Rideshare (S Lamar to SoCo)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000017",
+    "party_id": "10000000001",
+    "itin_title": "Event #2: Live Music Kickoff",
+    "itin_start": "2026-05-07T21:00:00Z",
+    "itin_end": "2026-05-07T23:15:00Z",
+    "itin_location": "The Continental Club (1315 S Congress Ave, Austin, TX 78704)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000018",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Venue → Hotel (Return)",
+    "itin_start": "2026-05-07T23:15:00Z",
+    "itin_end": "2026-05-07T23:35:00Z",
+    "itin_location": "Rideshare (SoCo to Downtown)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000019",
+    "party_id": "10000000001",
+    "itin_title": "Breakfast (Day 2)",
+    "itin_start": "2026-05-08T09:00:00Z",
+    "itin_end": "2026-05-08T10:00:00Z",
+    "itin_location": "Houndstooth Coffee Downtown (401 Congress Ave, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000020",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Breakfast → Kayak Rentals",
+    "itin_start": "2026-05-08T10:00:00Z",
+    "itin_end": "2026-05-08T10:20:00Z",
+    "itin_location": "Rideshare (Downtown to Zilker/Lady Bird Lake)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000021",
+    "party_id": "10000000001",
+    "itin_title": "Event #1: Lady Bird Lake Kayak Session (Pre-booked)",
+    "itin_start": "2026-05-08T10:30:00Z",
+    "itin_end": "2026-05-08T12:30:00Z",
+    "itin_location": "Lady Bird Lake Kayak Rentals (Zilker Park Area)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000022",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Kayaks → Lunch",
+    "itin_start": "2026-05-08T12:30:00Z",
+    "itin_end": "2026-05-08T12:50:00Z",
+    "itin_location": "Rideshare (Zilker to Barton Springs Rd)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000023",
+    "party_id": "10000000001",
+    "itin_title": "Lunch (BBQ)",
+    "itin_start": "2026-05-08T13:00:00Z",
+    "itin_end": "2026-05-08T14:15:00Z",
+    "itin_location": "Terry Black’s Barbecue (1003 Barton Springs Rd, Austin, TX 78704)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000024",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Lunch → Hotel (Reset)",
+    "itin_start": "2026-05-08T14:15:00Z",
+    "itin_end": "2026-05-08T14:35:00Z",
+    "itin_location": "Rideshare (Barton Springs to Downtown)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000025",
+    "party_id": "10000000001",
+    "itin_title": "Event #2: Escape Room (Pre-booked)",
+    "itin_start": "2026-05-08T16:00:00Z",
+    "itin_end": "2026-05-08T17:30:00Z",
+    "itin_location": "The Escape Game Austin (405 Red River St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000026",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Escape Game → Dinner",
+    "itin_start": "2026-05-08T17:30:00Z",
+    "itin_end": "2026-05-08T17:50:00Z",
+    "itin_location": "Rideshare (Red River to Colorado St)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000027",
+    "party_id": "10000000001",
+    "itin_title": "Dinner (Reservation)",
+    "itin_start": "2026-05-08T18:00:00Z",
+    "itin_end": "2026-05-08T20:00:00Z",
+    "itin_location": "Red Ash Italia (303 Colorado St #200, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000028",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Dinner → Speakeasy",
+    "itin_start": "2026-05-08T20:00:00Z",
+    "itin_end": "2026-05-08T20:10:00Z",
+    "itin_location": "Walk / Short Rideshare (Downtown)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000029",
+    "party_id": "10000000001",
+    "itin_title": "Event #3 (Bonus): Speakeasy Toast (Reservation)",
+    "itin_start": "2026-05-08T20:30:00Z",
+    "itin_end": "2026-05-08T22:30:00Z",
+    "itin_location": "The Roosevelt Room (307 W 5th St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000030",
+    "party_id": "10000000001",
+    "itin_title": "Breakfast (Graduation Day)",
+    "itin_start": "2026-05-09T09:00:00Z",
+    "itin_end": "2026-05-09T10:00:00Z",
+    "itin_location": "Josephine House (1601 Waterston Ave, Austin, TX 78703)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000031",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Breakfast → Hotel (Suit Up)",
+    "itin_start": "2026-05-09T10:00:00Z",
+    "itin_end": "2026-05-09T10:20:00Z",
+    "itin_location": "Rideshare (Clarksville to Downtown)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000032",
+    "party_id": "10000000001",
+    "itin_title": "Event #1: Photos + Outfit Reset + Gift Bag Drop for Congrats",
+    "itin_start": "2026-05-09T10:30:00Z",
+    "itin_end": "2026-05-09T11:45:00Z",
+    "itin_location": "The Driskill (604 Brazos St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000033",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Hotel → Campus Area",
+    "itin_start": "2026-05-09T11:45:00Z",
+    "itin_end": "2026-05-09T12:15:00Z",
+    "itin_location": "Rideshare (Downtown to UT Area)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000034",
+    "party_id": "10000000001",
+    "itin_title": "Lunch (Quick + Close to UT)",
+    "itin_start": "2026-05-09T12:30:00Z",
+    "itin_end": "2026-05-09T13:30:00Z",
+    "itin_location": "Moonshine Grill (303 Red River St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000035",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Lunch → Ceremony",
+    "itin_start": "2026-05-09T13:30:00Z",
+    "itin_end": "2026-05-09T13:55:00Z",
+    "itin_location": "Rideshare (Downtown to UT Area)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000036",
+    "party_id": "10000000001",
+    "itin_title": "Event #2: Graduation Ceremony + Congrats Circle",
+    "itin_start": "2026-05-09T14:00:00Z",
+    "itin_end": "2026-05-09T16:30:00Z",
+    "itin_location": "UT Austin Area (Austin, TX)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000037",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Ceremony → Happy Hour",
+    "itin_start": "2026-05-09T16:30:00Z",
+    "itin_end": "2026-05-09T17:00:00Z",
+    "itin_location": "Rideshare (UT Area to Rainey St)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000038",
+    "party_id": "10000000001",
+    "itin_title": "Event #3: Happy Hour (Post-Ceremony)",
+    "itin_start": "2026-05-09T17:00:00Z",
+    "itin_end": "2026-05-09T18:15:00Z",
+    "itin_location": "Half Step (75 1/2 Rainey St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000039",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Happy Hour → Dinner",
+    "itin_start": "2026-05-09T18:15:00Z",
+    "itin_end": "2026-05-09T18:30:00Z",
+    "itin_location": "Walk (Rainey area)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000040",
+    "party_id": "10000000001",
+    "itin_title": "Dinner (Main Celebration Reservation)",
+    "itin_start": "2026-05-09T19:00:00Z",
+    "itin_end": "2026-05-09T21:00:00Z",
+    "itin_location": "Emmer & Rye (51 Rainey St #110, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000041",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Dinner → Nightcap",
+    "itin_start": "2026-05-09T21:00:00Z",
+    "itin_end": "2026-05-09T21:25:00Z",
+    "itin_location": "Rideshare (Rainey to East 6th)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000042",
+    "party_id": "10000000001",
+    "itin_title": "Event #4: Nightcap + Toast Round",
+    "itin_start": "2026-05-09T21:30:00Z",
+    "itin_end": "2026-05-09T23:00:00Z",
+    "itin_location": "Whisler’s (1816 E 6th St, Austin, TX 78702)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000043",
+    "party_id": "10000000001",
+    "itin_title": "Breakfast (Day 4 Recovery)",
+    "itin_start": "2026-05-10T09:30:00Z",
+    "itin_end": "2026-05-10T10:30:00Z",
+    "itin_location": "Houndstooth Coffee Downtown (401 Congress Ave, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000044",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Breakfast → Spa",
+    "itin_start": "2026-05-10T10:30:00Z",
+    "itin_end": "2026-05-10T10:50:00Z",
+    "itin_location": "Rideshare (Downtown to Spa)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000045",
+    "party_id": "10000000001",
+    "itin_title": "Event #1: Spa Reset (Pre-booked)",
+    "itin_start": "2026-05-10T11:00:00Z",
+    "itin_end": "2026-05-10T12:30:00Z",
+    "itin_location": "Milk + Honey Spa Downtown (1011 W 5th St, Austin, TX 78703)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000046",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Spa → Park",
+    "itin_start": "2026-05-10T12:30:00Z",
+    "itin_end": "2026-05-10T12:55:00Z",
+    "itin_location": "Rideshare (Downtown to Zilker)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000047",
+    "party_id": "10000000001",
+    "itin_title": "Event #2: Zilker Park Hang + Final Group Photo",
+    "itin_start": "2026-05-10T13:00:00Z",
+    "itin_end": "2026-05-10T14:30:00Z",
+    "itin_location": "Zilker Metropolitan Park (2207 Lou Neff Rd, Austin, TX 78746)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000048",
+    "party_id": "10000000001",
+    "itin_title": "Lunch (Casual)",
+    "itin_start": "2026-05-10T14:45:00Z",
+    "itin_end": "2026-05-10T16:00:00Z",
+    "itin_location": "Home Slice Pizza (1415 S Congress Ave, Austin, TX 78704)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000049",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Lunch → Comedy (Evening)",
+    "itin_start": "2026-05-10T18:30:00Z",
+    "itin_end": "2026-05-10T19:00:00Z",
+    "itin_location": "Rideshare (SoCo to Downtown)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000050",
+    "party_id": "10000000001",
+    "itin_title": "Event #3 (Bonus): Comedy Night",
+    "itin_start": "2026-05-10T19:30:00Z",
+    "itin_end": "2026-05-10T21:00:00Z",
+    "itin_location": "Esther’s Follies (525 E 6th St, Austin, TX 78701)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000051",
+    "party_id": "10000000001",
+    "itin_title": "Dinner (Final Night)",
+    "itin_start": "2026-05-10T21:15:00Z",
+    "itin_end": "2026-05-10T22:30:00Z",
+    "itin_location": "Suerte (1800 E 6th St, Austin, TX 78702)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000052",
+    "party_id": "10000000001",
+    "itin_title": "Transport: Dinner → AUS (Departures)",
+    "itin_start": "2026-05-10T22:30:00Z",
+    "itin_end": "2026-05-10T23:00:00Z",
+    "itin_location": "Rideshare (East Austin to AUS)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  },
+  {
+    "itin_id": "20000000053",
+    "party_id": "10000000001",
+    "itin_title": "Arrival Window: AUS + Check-In Buffer",
+    "itin_start": "2026-05-10T23:00:00Z",
+    "itin_end": "2026-05-10T23:45:00Z",
+    "itin_location": "Austin-Bergstrom International Airport (AUS)",
+    "itin_roster": "Evan A., Ray H., Brandon J., Aslhey P., Jeff M., Geoff W."
+  }
+]

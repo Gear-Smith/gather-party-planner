@@ -1,0 +1,74 @@
+[
+  {
+    "user_id": "1000000001",
+    "user_created": "2026-02-22T00:01:00Z",
+    "user_first_name": "Evan",
+    "user_last_name": "Adams",
+    "user_display_name": "Evan A.",
+    "user_role": "Party Planner",
+    "user_phone": "817-994-5342",
+    "user_email": "e.adams8521@gmail.com",
+    "user_last_active": "2026-02-22T06:18:00Z",
+    "user_status": "active"
+  },
+  {
+    "user_id": "1000000002",
+    "user_created": "2026-02-22T00:02:00Z",
+    "user_first_name": "Brandon",
+    "user_last_name": "Jennings",
+    "user_display_name": "Brandon J.",
+    "user_role": "Party Goer",
+    "user_phone": "860-912-9700",
+    "user_email": "bj9627@utexas.edu",
+    "user_last_active": "2026-02-22T06:18:00Z",
+    "user_status": "active"
+  },
+  {
+    "user_id": "1000000003",
+    "user_created": "2026-02-22T00:03:00Z",
+    "user_first_name": "Ashley",
+    "user_last_name": "Phillips",
+    "user_display_name": "Aslhey P.",
+    "user_role": "Party Goer",
+    "user_phone": "214-934-9699",
+    "user_email": "aphillips@amaxinsurance.com",
+    "user_last_active": "2026-02-22T06:18:00Z",
+    "user_status": "active"
+  },
+  {
+    "user_id": "1000000004",
+    "user_created": "2026-02-22T00:04:00Z",
+    "user_first_name": "Jeff",
+    "user_last_name": "Musgrove",
+    "user_display_name": "Jeff M.",
+    "user_role": "Party Goer",
+    "user_phone": "317-414-1521",
+    "user_email": "jeffrey.musgrover@utexas.edu",
+    "user_last_active": "2026-02-22T06:18:00Z",
+    "user_status": "active"
+  },
+  {
+    "user_id": "1000000005",
+    "user_created": "2026-02-22T00:05:00Z",
+    "user_first_name": "Geofrey",
+    "user_last_name": "Wrightman",
+    "user_display_name": "Geoff W.",
+    "user_role": "Party Goer",
+    "user_phone": "817-480-0702",
+    "user_email": "geoffrey.wightman@gmail.com",
+    "user_last_active": "2026-02-22T06:18:00Z",
+    "user_status": "active"
+  },
+  {
+    "user_id": "1000000006",
+    "user_created": "2026-02-22T00:06:00Z",
+    "user_first_name": "Ray",
+    "user_last_name": "Huff",
+    "user_display_name": "Ray H.",
+    "user_role": "Co-Planner",
+    "user_phone": "360-451-4924",
+    "user_email": "gearsmith.integrations@gmail.com",
+    "user_last_active": "2026-02-22T06:18:00Z",
+    "user_status": "active"
+  }
+]
