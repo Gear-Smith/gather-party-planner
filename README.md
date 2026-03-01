@@ -73,16 +73,26 @@ bun run test:coverage
 Frontend and route work should build on the fixture-backed service foundation in
 [`app/lib/planner-data-service.ts`](app/lib/planner-data-service.ts).
 
-- `createFixturePlannerDataSource()` provides typed read access to the JSON
-  fixture tables under `test_data/json`.
-- `createPlannerServices()` allows future stories to inject a different data
-  source without changing callers.
+- [`app/lib/planner-data-source.ts`](app/lib/planner-data-source.ts) is
+  infrastructure-only. It owns the typed table reader and the fixture-backed
+  adapter over `test_data/json`.
+- [`app/lib/planner-data-service.ts`](app/lib/planner-data-service.ts) is the
+  app-facing entry point. Future story methods should be added here or in
+  adjacent service modules.
+- `createPlannerServices()` is the composition seam for swapping the backing
+  store later.
 - `getPlannerServices()` returns the default app-level service container backed
-  by the fixture data.
+  by the fixture data today.
 
 This layer is intentionally minimal. Story-specific queries and mutations should
 be added incrementally as full-stack slices are implemented, rather than
 building a broad generic API up front.
+
+Boundary rules:
+- routes, loaders, actions, and components should not import fixture JSON files;
+- frontend code should not normalize around raw table reads;
+- future database migration should happen by replacing the injected data source,
+  not by rewriting route/component call sites.
 
 ## Deployment
 
