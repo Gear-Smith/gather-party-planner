@@ -25,7 +25,32 @@
 			"database_name": "gather_planer",
 			"database_id": "d7fe2479-b47f-4d52-bd97-1ebb3bc4bc0f"
 		}
-	]
+	],
+	"env": {
+		"staging": {
+			"name": "gather-party-planner-staging",
+			"workers_dev": false,
+			"routes": [
+				{
+					"pattern": "staging.gatherpartyplanner.com",
+					"custom_domain": true
+				}
+			],
+			"vars": {
+				"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare (staging)",
+				"CF_ACCESS_TEAM_DOMAIN": "veltra.cloudflareaccess.com",
+				"CF_ACCESS_AUD": "da1a7752c59e09ef9e68d878beb88d1ed7e280720f46097664fc271055fde28c",
+				"DEV_ACCESS_EMAIL": ""
+			},
+			"d1_databases": [
+				{
+					"binding": "gather_planer",
+					"database_name": "gather_planer",
+					"database_id": "d7fe2479-b47f-4d52-bd97-1ebb3bc4bc0f"
+				}
+			]
+		}
+	}
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

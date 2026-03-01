@@ -102,6 +102,8 @@ records.
   in staging or production.
 - App authorization is resolved from the service layer using fixture-backed user
   and party membership data, not from Cloudflare roles.
+- The repo now has a dedicated Wrangler staging environment that targets
+  `staging.gatherpartyplanner.com`. Deploy it with `npm run deploy:staging`.
 
 The current prototype membership fixture lives in
 [`test_data/manual/party-memberships.json`](test_data/manual/party-memberships.json).
@@ -117,6 +119,26 @@ To build and deploy directly to production:
 ```sh
 npm run deploy
 ```
+
+To build and deploy the staging Worker to the custom domain:
+
+```sh
+npm run deploy:staging
+```
+
+After the first staging deploy, finish the Zero Trust side in the Cloudflare
+dashboard:
+
+- create or confirm the Zero Trust organization and team domain;
+- enable the `One-Time PIN` identity provider;
+- create a self-hosted Access application for
+  `staging.gatherpartyplanner.com`;
+- copy the Access application AUD into `CF_ACCESS_AUD`;
+- allow only approved tester emails such as
+  `gearsmith.integrations@gmail.com`.
+
+Wrangler deploys the Worker and custom domain, but Cloudflare Access
+applications and policies are still managed in Zero Trust, not in this repo.
 
 To deploy a preview URL:
 

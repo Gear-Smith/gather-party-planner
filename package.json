@@ -6,6 +6,7 @@
 		"build": "react-router build",
 		"cf-typegen": "wrangler types",
 		"deploy": "npm run build && wrangler deploy",
+		"deploy:staging": "npm run build && wrangler deploy -e staging",
 		"dev": "react-router dev",
 		"generate:test-data": "python3 scripts/generate_test_data.py",
 		"postinstall": "npm run cf-typegen",
