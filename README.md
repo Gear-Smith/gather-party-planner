@@ -68,6 +68,22 @@ Run tests with coverage output:
 bun run test:coverage
 ```
 
+## Data Service Foundation
+
+Frontend and route work should build on the fixture-backed service foundation in
+[`app/lib/planner-data-service.ts`](app/lib/planner-data-service.ts).
+
+- `createFixturePlannerDataSource()` provides typed read access to the JSON
+  fixture tables under `test_data/json`.
+- `createPlannerServices()` allows future stories to inject a different data
+  source without changing callers.
+- `getPlannerServices()` returns the default app-level service container backed
+  by the fixture data.
+
+This layer is intentionally minimal. Story-specific queries and mutations should
+be added incrementally as full-stack slices are implemented, rather than
+building a broad generic API up front.
+
 ## Deployment
 
 Deployment is done using the Wrangler CLI.

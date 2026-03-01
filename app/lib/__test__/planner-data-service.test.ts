@@ -1,61 +1,89 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import {
-  getDefaultPartyDetail,
-  getFixturePlannerDataService,
+  createFixturePlannerDataSource,
+  createPlannerServices,
+  getPlannerServices,
+  PLANNER_TABLE_NAMES,
+  type PlannerDataSnapshot,
 } from "../planner-data-service";
 
-describe("fixture planner data service", () => {
-  const service = getFixturePlannerDataService();
-
-  it("returns the fixture collections with stable record counts", async () => {
-    await expect(service.listLocations()).resolves.toHaveLength(257);
-    await expect(service.listUsers()).resolves.toHaveLength(6);
-    await expect(service.listParties()).resolves.toHaveLength(1);
-    await expect(service.listItineraryEntries()).resolves.toHaveLength(53);
+describe("planner data service foundation", () => {
+  it("exposes the supported table names for future slice work", () => {
+    expect(PLANNER_TABLE_NAMES).toEqual([
+      "locations",
+      "users",
+      "parties",
+      "itinerary",
+    ]);
   });
 
-  it("returns defensive copies instead of mutable shared references", async () => {
-    const firstRead = await service.listLocations();
-    const secondRead = await service.listLocations();
+  it("reads fixture-backed tables through a generic typed data source", async () => {
+    const dataSource = createFixturePlannerDataSource();
+
+    await expect(dataSource.readTable("locations")).resolves.toHaveLength(257);
+    await expect(dataSource.readTable("users")).resolves.toHaveLength(6);
+    await expect(dataSource.readTable("parties")).resolves.toHaveLength(1);
+    await expect(dataSource.readTable("itinerary")).resolves.toHaveLength(53);
+  });
+
+  it("returns defensive copies so consumers cannot mutate shared fixture state", async () => {
+    const dataSource = createFixturePlannerDataSource();
+    const firstRead = await dataSource.readTable("locations");
+    const secondRead = await dataSource.readTable("locations");
 
     expect(firstRead).toEqual(secondRead);
     expect(firstRead).not.toBe(secondRead);
 
     firstRead[0]!.location_name = "Mutated";
 
-    const thirdRead = await service.listLocations();
+    const thirdRead = await dataSource.readTable("locations");
 
     expect(thirdRead[0]?.location_name).toBe("The Driskill");
   });
 
-  it("can resolve a party detail aggregate for upcoming frontend screens", async () => {
-    const detail = await service.getPartyDetail("10000000001");
+  it("allows service-layer composition through data-source injection", async () => {
+    const customSnapshot: PlannerDataSnapshot = {
+      locations: [],
+      users: [],
+      parties: [
+        {
+          party_id: "custom-party",
+          party_creator: "custom-user",
+          party_created_at: null,
+          party_updated_at: null,
+          party_name: "Custom Party",
+          party_type: "Celebration",
+          party_status: "Pre-Party",
+          party_start: null,
+          party_end: null,
+          party_location: null,
+          party_headcount: null,
+          party_tone: null,
+          party_exposure: null,
+          party_morality: null,
+          party_budget: null,
+          party_planner: null,
+          party_share_code: null,
+        },
+      ],
+      itinerary: [],
+    };
+    const customSource = createFixturePlannerDataSource(customSnapshot);
+    const readTableSpy = vi.spyOn(customSource, "readTable");
 
-    expect(detail).toMatchObject({
-      party: {
-        party_id: "10000000001",
-        party_name: "Evan's Graduation Party",
-      },
-      creator: {
-        user_id: "1000000001",
-        user_display_name: "Evan A.",
-      },
-    });
-    expect(detail?.itinerary).toHaveLength(53);
+    const services = createPlannerServices({ dataSource: customSource });
+    const parties = await services.data.readTable("parties");
+
+    expect(parties).toHaveLength(1);
+    expect(parties[0]?.party_id).toBe("custom-party");
+    expect(readTableSpy).toHaveBeenCalledWith("parties");
   });
 
-  it("returns null when a requested record does not exist", async () => {
-    await expect(service.getLocationById("missing")).resolves.toBeNull();
-    await expect(service.getUserById("missing")).resolves.toBeNull();
-    await expect(service.getPartyById("missing")).resolves.toBeNull();
-    await expect(service.getPartyDetail("missing")).resolves.toBeNull();
-  });
+  it("defaults the service container to the fixture-backed source", async () => {
+    const services = getPlannerServices();
+    const parties = await services.data.readTable("parties");
 
-  it("provides a default party aggregate for bootstrapping frontend flows", async () => {
-    const detail = await getDefaultPartyDetail();
-
-    expect(detail?.party.party_id).toBe("10000000001");
-    expect(detail?.itinerary[0]?.party_id).toBe("10000000001");
+    expect(parties[0]?.party_id).toBe("10000000001");
   });
 });
