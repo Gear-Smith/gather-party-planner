@@ -40,7 +40,7 @@
 				"VALUE_FROM_CLOUDFLARE": "Hello from Cloudflare (staging)",
 				"CF_ACCESS_TEAM_DOMAIN": "veltra.cloudflareaccess.com",
 				"CF_ACCESS_AUD": "da1a7752c59e09ef9e68d878beb88d1ed7e280720f46097664fc271055fde28c",
-				"DEV_ACCESS_EMAIL": ""
+				"DEV_ACCESS_EMAIL": "gearsmith.integrations@gmail.com"
 			},
 			"d1_databases": [
 				{
