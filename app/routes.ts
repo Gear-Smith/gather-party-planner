@@ -5,6 +5,8 @@ export default [
   route("login", "routes/login.tsx"),
   route("unauthorized", "routes/unauthorized.tsx"),
   route("forbidden", "routes/forbidden.tsx"),
+  route("dashboard", "routes/dashboard.tsx"),
+  route("votes", "routes/votes.tsx"),
   route("parties", "routes/parties.tsx"),
   route("parties/new", "routes/parties-new.tsx"),
 ] satisfies RouteConfig;

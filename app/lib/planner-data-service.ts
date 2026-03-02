@@ -3,6 +3,10 @@ import {
   type AccountAccessService,
 } from "./account-access-service";
 import {
+  createPartyParticipationService,
+  type PartyParticipationService,
+} from "./party-participation-service";
+import {
   createFixturePlannerDataSource,
   type PlannerDataSource,
 } from "./planner-data-source";
@@ -13,6 +17,7 @@ export interface PlannerServices {
   // to this module over time, not on direct table reads.
   data: PlannerDataSource;
   accountAccess: AccountAccessService;
+  partyParticipation: PartyParticipationService;
 }
 
 export interface CreatePlannerServicesOptions {
@@ -31,6 +36,7 @@ export function createPlannerServices(
   return {
     data: dataSource,
     accountAccess: createAccountAccessService({ dataSource }),
+    partyParticipation: createPartyParticipationService({ dataSource }),
   };
 }
 

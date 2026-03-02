@@ -26,6 +26,7 @@ export function WelcomePage({
     identityEmail: string;
     partyRole: keyof typeof PARTY_ROLE_LABELS;
     canAccessPlanningTools: boolean;
+    canAccessParticipantTools: boolean;
   };
 }) {
   return (
@@ -41,6 +42,16 @@ export function WelcomePage({
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
+            {currentUser.canAccessParticipantTools ? (
+              <>
+                <Button asChild variant="outline" className="w-full shadow-xl/30">
+                  <a href="/dashboard">View Party Dashboard</a>
+                </Button>
+                <Button asChild className="w-full shadow-xl/30">
+                  <a href="/votes">Vote on Party Decisions</a>
+                </Button>
+              </>
+            ) : null}
             {currentUser.canAccessPlanningTools ? (
               <>
                 <Button asChild variant="outline" className="w-full shadow-xl/30">

@@ -30,6 +30,7 @@ export async function loader({ context, request }: Route.LoaderArgs) {
         identityEmail: access.identityEmail,
         partyRole: access.memberships[0]?.party_role ?? "party_goer",
         canAccessPlanningTools: hasPlanningAccess(access.memberships),
+        canAccessParticipantTools: true,
       },
     };
   } catch (error) {

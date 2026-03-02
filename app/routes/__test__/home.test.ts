@@ -80,6 +80,7 @@ describe("home route", () => {
         identityEmail: "gearsmith.integrations@gmail.com",
         partyRole: "co_planner",
         canAccessPlanningTools: true,
+        canAccessParticipantTools: true,
       },
     });
   });
@@ -96,6 +97,7 @@ describe("home route", () => {
               identityEmail: "gearsmith.integrations@gmail.com",
               partyRole: "co_planner",
               canAccessPlanningTools: true,
+              canAccessParticipantTools: true,
             },
           },
         } as never,
