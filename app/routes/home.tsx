@@ -1,6 +1,9 @@
 import type { Route } from "./+types/home";
 import { redirect } from "react-router";
-import { AccountAccessError } from "~/lib/account-access-service";
+import {
+  AccountAccessError,
+  hasPlanningAccess,
+} from "~/lib/account-access-service";
 import { getPlannerServices } from "~/lib/planner-data-service";
 import { WelcomePage } from "~/pages/welcome/page";
 
@@ -26,6 +29,7 @@ export async function loader({ context, request }: Route.LoaderArgs) {
         displayName: access.user.user_display_name ?? access.user.user_email ?? "Unknown user",
         identityEmail: access.identityEmail,
         partyRole: access.memberships[0]?.party_role ?? "party_goer",
+        canAccessPlanningTools: hasPlanningAccess(access.memberships),
       },
     };
   } catch (error) {

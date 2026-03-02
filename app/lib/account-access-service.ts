@@ -19,6 +19,10 @@ export interface AuthenticatedPrototypeUser {
   memberships: PartyMembershipRecord[];
 }
 
+export interface PlanningAuthorizedUser extends AuthenticatedPrototypeUser {
+  planningMemberships: PartyMembershipRecord[];
+}
+
 export type AccountAccessResult =
   | { status: "unauthenticated" }
   | { status: "unmatched_identity"; identityEmail: string }
@@ -39,6 +43,9 @@ export interface AccountAccessService {
   requireCurrentUserContext(
     args: RequireCurrentUserContextArgs,
   ): Promise<AuthenticatedPrototypeUser>;
+  requirePlanningAccess(
+    args: RequireCurrentUserContextArgs,
+  ): Promise<PlanningAuthorizedUser>;
 }
 
 export interface CreateAccountAccessServiceOptions {
@@ -54,12 +61,14 @@ export interface RequireCurrentUserContextArgs extends ResolvePrototypeIdentityA
 
 export class AccountAccessError extends Error {
   constructor(
-    public readonly code: "unauthenticated" | "unmatched_identity",
+    public readonly code: "unauthenticated" | "unmatched_identity" | "forbidden",
     public readonly identityEmail?: string,
   ) {
     super(code);
   }
 }
+
+const PLANNING_ACCESS_ROLES: PartyRole[] = ["planner", "co_planner"];
 
 export function createAccountAccessService({
   dataSource,
@@ -148,7 +157,28 @@ export function createAccountAccessService({
 
       return result;
     },
+    async requirePlanningAccess(args) {
+      const result = await this.requireCurrentUserContext(args);
+      const planningMemberships = result.memberships.filter((membership) =>
+        PLANNING_ACCESS_ROLES.includes(membership.party_role),
+      );
+
+      if (planningMemberships.length === 0) {
+        throw new AccountAccessError("forbidden");
+      }
+
+      return {
+        ...result,
+        planningMemberships,
+      };
+    },
   };
+}
+
+export function hasPlanningAccess(memberships: PartyMembershipRecord[]): boolean {
+  return memberships.some((membership) =>
+    PLANNING_ACCESS_ROLES.includes(membership.party_role),
+  );
 }
 
 function resolveIdentityEmail({

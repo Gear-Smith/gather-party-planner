@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  AccountAccessError,
   createAccountAccessService,
   type PartyMembershipRecord,
 } from "../account-access-service";
@@ -199,5 +200,52 @@ describe("account access service", () => {
     });
 
     expect(productionResult).toEqual({ status: "unauthenticated" });
+  });
+
+  it("grants planning access to co-planners", async () => {
+    const service = createService();
+
+    const result = await service.requirePlanningAccess({
+      request: new Request("https://example.com/"),
+      cloudflareEnv: {
+        CF_ACCESS_AUD: "",
+        CF_ACCESS_TEAM_DOMAIN: "",
+      },
+      environmentName: "test",
+      devAccessEmail: "gearsmith.integrations@gmail.com",
+    });
+
+    expect(result.user.user_id).toBe("1000000006");
+    expect(result.planningMemberships).toEqual([
+      {
+        party_id: "10000000001",
+        user_id: "1000000006",
+        party_role: "co_planner",
+      },
+    ]);
+  });
+
+  it("denies planning access to party goers", async () => {
+    const service = createService({
+      partyMemberships: [
+        {
+          party_id: "10000000001",
+          user_id: "1000000006",
+          party_role: "party_goer",
+        },
+      ],
+    });
+
+    await expect(
+      service.requirePlanningAccess({
+        request: new Request("https://example.com/"),
+        cloudflareEnv: {
+          CF_ACCESS_AUD: "",
+          CF_ACCESS_TEAM_DOMAIN: "",
+        },
+        environmentName: "test",
+        devAccessEmail: "gearsmith.integrations@gmail.com",
+      }),
+    ).rejects.toEqual(new AccountAccessError("forbidden"));
   });
 });

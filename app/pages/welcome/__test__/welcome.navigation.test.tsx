@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { WelcomePage } from "../page";
 
 describe("Welcome navigation choices", () => {
-  it("shows actionable Open Party and New Party controls", () => {
+  it("shows actionable Open Party and New Party controls for co-planners", () => {
     render(
       <WelcomePage
         message="test message"
@@ -12,6 +12,7 @@ describe("Welcome navigation choices", () => {
           displayName: "Ray H.",
           identityEmail: "gearsmith.integrations@gmail.com",
           partyRole: "co_planner",
+          canAccessPlanningTools: true,
         }}
       />,
     );
@@ -25,7 +26,27 @@ describe("Welcome navigation choices", () => {
 
     expect(openPartyControl).toBeInTheDocument();
     expect(newPartyControl).toBeInTheDocument();
-    expect(openPartyControl).toBeEnabled();
-    expect(newPartyControl).toBeEnabled();
+    expect(openPartyControl).toHaveAttribute("href", "/parties");
+    expect(newPartyControl).toHaveAttribute("href", "/parties/new");
+  });
+
+  it("withholds planning tool access from party goers on the welcome screen", () => {
+    render(
+      <WelcomePage
+        message="test message"
+        currentUser={{
+          displayName: "Taylor P.",
+          identityEmail: "taylor@example.com",
+          partyRole: "party_goer",
+          canAccessPlanningTools: false,
+        }}
+      />,
+    );
+
+    expect(
+      screen.getByText(/planning tools are limited to planners and co-planners/i),
+    ).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: "Plan New Party" })).toBeDisabled();
+    expect(screen.getByRole("button", { name: "Edit a Party" })).toBeDisabled();
   });
 });

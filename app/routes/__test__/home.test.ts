@@ -79,6 +79,7 @@ describe("home route", () => {
         displayName: "Ray H.",
         identityEmail: "gearsmith.integrations@gmail.com",
         partyRole: "co_planner",
+        canAccessPlanningTools: true,
       },
     });
   });
@@ -94,6 +95,7 @@ describe("home route", () => {
               displayName: "Ray H.",
               identityEmail: "gearsmith.integrations@gmail.com",
               partyRole: "co_planner",
+              canAccessPlanningTools: true,
             },
           },
         } as never,
@@ -109,8 +111,8 @@ describe("home route", () => {
 
     expect(openPartyControl).toBeInTheDocument();
     expect(newPartyControl).toBeInTheDocument();
-    expect(openPartyControl).toBeEnabled();
-    expect(newPartyControl).toBeEnabled();
+    expect(openPartyControl).toHaveAttribute("href", "/parties");
+    expect(newPartyControl).toHaveAttribute("href", "/parties/new");
     expect(screen.getByText(/Signed in as Ray H\./)).toBeInTheDocument();
     expect(screen.getByText(/Co-Planner/)).toBeInTheDocument();
   });

@@ -25,6 +25,7 @@ export function WelcomePage({
     displayName: string;
     identityEmail: string;
     partyRole: keyof typeof PARTY_ROLE_LABELS;
+    canAccessPlanningTools: boolean;
   };
 }) {
   return (
@@ -40,18 +41,45 @@ export function WelcomePage({
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
-            <Button variant="outline" className="w-full shadow-xl/30">
-              <span>
-                <Gi3dGlasses />
-              </span>
-              Plan New Party
-            </Button>
-            <Button className="w-full shadow-xl/30">
-              <span>
-                <RiEdit2Fill />
-              </span>
-              Edit a Party
-            </Button>
+            {currentUser.canAccessPlanningTools ? (
+              <>
+                <Button asChild variant="outline" className="w-full shadow-xl/30">
+                  <a href="/parties/new">
+                    <span>
+                      <Gi3dGlasses />
+                    </span>
+                    Plan New Party
+                  </a>
+                </Button>
+                <Button asChild className="w-full shadow-xl/30">
+                  <a href="/parties">
+                    <span>
+                      <RiEdit2Fill />
+                    </span>
+                    Edit a Party
+                  </a>
+                </Button>
+              </>
+            ) : (
+              <>
+                <p className="text-muted-foreground text-sm">
+                  Planning tools are limited to planners and co-planners in this
+                  prototype.
+                </p>
+                <Button variant="outline" className="w-full shadow-xl/30" disabled>
+                  <span>
+                    <Gi3dGlasses />
+                  </span>
+                  Plan New Party
+                </Button>
+                <Button className="w-full shadow-xl/30" disabled>
+                  <span>
+                    <RiEdit2Fill />
+                  </span>
+                  Edit a Party
+                </Button>
+              </>
+            )}
           </CardContent>
           <CardFooter>
             <div className="text-muted-foreground text-xs">
